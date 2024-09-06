@@ -15,5 +15,14 @@ fun jugarjankenpo(Opcion: String): String {
 }
 
 fun main (){
+    println("Elige pibe:")
+    println("piedra")
+    println("papel")
+    println("tijera")
+    
+    val Opcion = readLine()
+    
+    val resultado = jugarjankenpo(Opcion)
 
+    println(resultado)
 }
