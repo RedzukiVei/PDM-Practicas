@@ -22,3 +22,7 @@ fun adivinalatinka() {
 
     println("Fin del juego, hey, lo diste todo pero no siempre se puede ganar, en fin, el número era: $numeroAdivinar")
 }
+
+fun main() {
+    adivinalatinka()            //Empezamos a jugar o iniciador
+}
