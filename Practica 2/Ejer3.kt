@@ -7,3 +7,25 @@ abstract class Shape {
         println("El Perimetro es: ${CalcularPerimetro()}")
     }
 }
+
+class Cuadrado(private val lado: Double) : Shape() {
+
+    override fun calcularArea(): Double = lado * lado
+
+    override fun calcularPerimetro(): Double = 4 * lado
+}
+
+class Circulo(private val radio: Double) : Shape() {
+
+    override fun calcularArea(): Double = Math.PI * radio * radio           //Se utilzia Math.PI para llamar al poderoso PI osea 3.14
+
+    override fun calcularPerimetro(): Double = 2 * Math.PI * radio
+}
+
+class Rectangulo(private val largo: Double, private val ancho: Double) : Shape() {
+
+    override fun calcularArea(): Double = largo * ancho
+
+    override fun calcularPerimetro(): Double = 2 * (largo + ancho)
+}
+
