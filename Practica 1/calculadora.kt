@@ -13,5 +13,11 @@ fun main() {
         println("4. Division")
         println("Elige pibe, que operación matemática deseas realizar (solo elige el número): ")
         opcion = readLine()!!.toInt()
+    
+    if (opcion in 1..4) {
+        print("Ingrese el primer número: ")
+        val num1 = readLine()!!.toDouble()
+        print("Ingrese el segundo número: ")
+        val num2 = readLine()!!.toDouble()
     }
 }
