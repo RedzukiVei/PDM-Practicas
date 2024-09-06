@@ -48,6 +48,42 @@ class Biblioteca : IBiblioteca {
             println("Material no disponible.")
         }
     }
-    
 
+    override fun devolverMaterial(usuario: Usuario, material: Material) {
+        if (usuarios[usuario]?.contains(material) == true) {
+            usuarios[usuario]?.remove(material)
+            materialesDisponibles.add(material)
+            println("${material.titulo} devuelto por ${usuario.nombre}.")
+        } else {
+            println("El material no fue prestado a este usuario.")
+        }
+    }
+
+    override fun mostrarMaterialesDisponibles() {
+        println("Materiales disponibles:")
+        materialesDisponibles.forEach { it.mostrarDetalles() }
+    }
+
+    override fun mostrarMaterialesPrestadosPorUsuario(usuario: Usuario) {
+        println("Materiales prestados por ${usuario.nombre}:")
+        usuarios[usuario]?.forEach { it.mostrarDetalles() }
+    }
+}
+
+fun main() {
+    val biblioteca = Biblioteca()
+    
+    val libro = Libro("Kotlin Programming", "John Doe", 2020, "Educación", 300)
+    val revista = Revista("Tech Today", "Jane Smith", 2021, "1234-5678", 5, 10, "TechPress")
+
+    val usuario = Usuario("Carlos", "Pérez", 25)
+    
+    biblioteca.registrarMaterial(libro)
+    biblioteca.registrarMaterial(revista)
+    biblioteca.registrarUsuario(usuario)
+    
+    biblioteca.prestarMaterial(usuario, libro)
+    biblioteca.mostrarMaterialesPrestadosPorUsuario(usuario)
+    biblioteca.devolverMaterial(usuario, libro)
+    biblioteca.mostrarMaterialesDisponibles()
 }
