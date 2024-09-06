@@ -25,7 +25,39 @@ class CuentaBancaria(private var saldo: Double, private var limiteRetiro: Double
 
 fun main() {
     val cuenta = CuentaBancaria(1000.0, 500.0)
-    cuenta.retirar(300.0)
-    cuenta.setSaldo(1500.0)
-    cuenta.retirar(600.0)
+    var continuar = true
+
+    while (continuar) {
+        println("Opciones:")
+        println("1. Retirar dinero")
+        println("2. Depositar dinero")
+        println("3. Ver saldo")
+        println("4. Salir")
+
+        print("Ingrese una opción: ")
+        val opcion = readLine()!!.trim()
+
+        when (opcion) {
+            "1" -> {
+                print("Ingrese la cantidad a retirar: ")
+                val cantidad = readLine()!!.trim().toDouble()
+                cuenta.retirar(cantidad)
+            }
+            "2" -> {
+                print("Ingrese la cantidad a depositar: ")
+                val cantidad = readLine()!!.trim().toDouble()
+                cuenta.setSaldo(cuenta.getSaldo() + cantidad)
+            }
+            "3" -> {
+                println("Su saldo actual es: $${cuenta.getSaldo()}")
+            }
+            "4" -> {
+                println("Saliendo...")
+                continuar = false
+            }
+            else -> {
+                println("Opción inválida. Intente nuevamente.")
+            }
+        }
+    }
 }
