@@ -7,7 +7,7 @@ class CuentaBancaria(private var saldo: Double, private var limiteRetiro: Double
             saldo = NuevoSaldo
         }
         else {
-            println("El saldo no puede estar en números rojos, mi estimado)
+            println("El saldo no puede estar en números rojos, mi estimado")
         }
     }
 
@@ -21,4 +21,11 @@ class CuentaBancaria(private var saldo: Double, private var limiteRetiro: Double
             println("Has logrado retirar con exito. Su saldo actual es: $$saldo")
         }
     }
+}
+
+fun main() {
+    val cuenta = CuentaBancaria(1000.0, 500.0)
+    cuenta.retirar(300.0)
+    cuenta.setSaldo(1500.0)
+    cuenta.retirar(600.0)
 }
