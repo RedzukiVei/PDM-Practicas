@@ -14,5 +14,8 @@ fun main(){
     val salario = readLine()!!.toDouble()           //Ingresamos el Salario y claramente, para evitar problemas el !!.toDouble()
     print("Ingrese su puntuación: ")
     val puntuacion = readLine()!!.toDouble()        //Ingresamos la puntuacion
-    
+
+    val (nivel, dinero) = evaluarEmpleado(puntuacion, salario)
+    println("Su nivel de Rendimiento: $nivel")
+    println("La cantidad de Dinero Recibido: $dinero")
 }
