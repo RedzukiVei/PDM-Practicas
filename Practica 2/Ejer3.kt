@@ -29,3 +29,14 @@ class Rectangulo(private val largo: Double, private val ancho: Double) : Shape()
     override fun calcularPerimetro(): Double = 2 * (largo + ancho)
 }
 
+fun main() {
+    var continuar = true
+
+    while (continuar) {
+        println("Elige una figura:")
+        println("1. Cuadrado")
+        println("2. Círculo")
+        println("3. Rectángulo")
+        println("4. Salir")
+    }
+}
