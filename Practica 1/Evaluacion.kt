@@ -5,7 +5,14 @@ fun evaluarEmpleado(puntuacion: Double, salario: Double): Pair<String, Double> {
         in 7.0..10.0 -> "Meritorio"
         else -> "Usted es tan bueno o malo, que excede nuestros niveles de rendimiento, aunque igual su puntuación no es válida"
     }
-    val dinero = if (puntuacion in 0.0..10.0) salario * (puntuacion / 10) else 0.0      //Sacamos el salario del empleado a partir de su puntuacion
-    return Pair(nivelRendimiento, dinero)               //Se retorna el rendimiento y salario del empleado
+    val dinero = if (puntuacion in 0.0..10.0) salario * (puntuacion / 10) else 0.0      //Sacamos el dinero del empleado a partir de su puntuacion
+    return Pair(nivelRendimiento, dinero)               //Se retorna el rendimiento y dinero del empleado
 }
 
+fun main(){
+    print("Ingrese su salario mensual: ")
+    val salario = readLine()!!.toDouble()           //Ingresamos el Salario y claramente, para evitar problemas el !!.toDouble()
+    print("Ingrese su puntuación: ")
+    val puntuacion = readLine()!!.toDouble()        //Ingresamos la puntuacion
+    
+}
