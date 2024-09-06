@@ -34,4 +34,20 @@ class Biblioteca : IBiblioteca {
         println("${material.titulo} registrado.")
     }
 
+    override fun registrarUsuario(usuario: Usuario) {
+        usuarios[usuario] = mutableListOf()
+        println("Usuario ${usuario.nombre} registrado.")
+    }
+
+    override fun prestarMaterial(usuario: Usuario, material: Material) {
+        if (materialesDisponibles.contains(material)) {
+            materialesDisponibles.remove(material)
+            usuarios[usuario]?.add(material)
+            println("${material.titulo} prestado a ${usuario.nombre}.")
+        } else {
+            println("Material no disponible.")
+        }
+    }
+    
+
 }
