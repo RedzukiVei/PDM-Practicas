@@ -28,7 +28,15 @@ class Producto(private var precio: Double, private var descuento: Double) {
     
     fun main() {
 
-    val producto = Producto(100.0, 10.0)
+    print("Ingrese el precio del producto: ")
+
+    val precio = readLine()!!.trim().toDouble()
+
+    print("Ingrese el descuento del producto (0-100): ")
     
+    val descuento = readLine()!!.trim().toDouble()
+
+    val producto = Producto(precio, descuento)
+
     println("Precio final: ${producto.calcularPrecioFinal()}")
 }
