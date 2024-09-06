@@ -11,6 +11,7 @@ fun main() {
         println("2. Resta")
         println("3. Multiplicacion")
         println("4. Division")
+        println("5. Salir")
         println("Elige pibe, que operación matemática deseas realizar (solo elige el número): ")
         opcion = readLine()!!.toInt()
     
@@ -21,13 +22,13 @@ fun main() {
         val num2 = readLine()!!.toDouble()
 
         val resultado = when (opcion) {
-            1 -> suma
-            2 -> resta
-            3 -> multiplicacion
-            4 -> division
+            1 -> suma(num1, num2)
+            2 -> resta(num1, num2)
+            3 -> multiplicacion(num1, num2)
+            4 -> division(num1, num2)
             else -> 0.0
         }
         println ("El resultado de la operación matemática que solicito es: $resultado")
         }
-    }
+    }while (opcion!=5)
 }
