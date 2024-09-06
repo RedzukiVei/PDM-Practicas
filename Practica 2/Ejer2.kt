@@ -10,6 +10,7 @@ class Producto(private var precio: Double, private var descuento: Double) {
             println("El precio no puede estar en números rojos o de un valor negativo.")
         }
     }
+
     fun getDescuento(): Double = descuento
 
     fun setDescuento(nuevoDescuento: Double) {
@@ -19,7 +20,15 @@ class Producto(private var precio: Double, private var descuento: Double) {
             println("El descuento debe estar entre 0 y 100.")
         }
     }
-    fun calcularPrecioFinal(): Double {
-        return precio - (precio * (descuento / 100))
+
+        fun calcularPrecioFinal(): Double {
+            return precio - (precio * (descuento / 100))
+        }
     }
-    }
+    
+    fun main() {
+
+    val producto = Producto(100.0, 10.0)
+    
+    println("Precio final: ${producto.calcularPrecioFinal()}")
+}
