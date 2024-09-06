@@ -19,5 +19,15 @@ fun main() {
         val num1 = readLine()!!.toDouble()
         print("Ingrese el segundo número: ")
         val num2 = readLine()!!.toDouble()
+
+        val resultado = when (opcion) {
+            1 -> suma
+            2 -> resta
+            3 -> multiplicacion
+            4 -> division
+            else -> 0.0
+        }
+        println ("El resultado de la operación matemática que solicito es: $resultado")
+        }
     }
 }
