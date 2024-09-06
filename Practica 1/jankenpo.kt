@@ -22,7 +22,11 @@ fun main (){
     
     val Opcion = readLine()
     
-    val resultado = jugarjankenpo(Opcion)
+    val resultado = Opcion?.let{ jugarjankenpo(it) }
 
-    println(resultado)
+    if (resultado != null) {
+        println(resultado)
+    } else {
+        println("No se proporcionó una opción válida")
+    }
 }
